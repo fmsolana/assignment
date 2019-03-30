@@ -2,7 +2,7 @@
 Feature: Begin the game
 
   Scenario: Get information about game
-    When get request to  "url" with game "id"
+    When get request with game "id"
     Then a json respone with introductory explanation is send
 
   Scenario: begin the game

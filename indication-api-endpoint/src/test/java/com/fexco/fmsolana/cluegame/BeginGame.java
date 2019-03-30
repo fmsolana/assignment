@@ -5,9 +5,8 @@ import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 
 public class BeginGame {
-	@When("get request to {string} with game {string}")
-	public void get_request_to_with_game(String string, String string2) {
-		// Write code here that turns the phrase above into concrete actions
+	@When("get request with game {string}")
+	public void get_request_to_with_game(String string2) {
 		throw new cucumber.api.PendingException();
 	}
 
