@@ -6,3 +6,4 @@
 6. Add spark waitToInit for Travis. In Local look that the sevice is more quick to up
 7. Added post service for feature begin game
 8. See that test jar are including in copydepencency and I include only runtime jar
+9. Begin to work with RabbitMQ
