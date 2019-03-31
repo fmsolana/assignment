@@ -13,4 +13,5 @@ public class HttpReadBody {
 		return bodyReponse.lines().collect(Collectors.joining());
 	}
 
+
 }

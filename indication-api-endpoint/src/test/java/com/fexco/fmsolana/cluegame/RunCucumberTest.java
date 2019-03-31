@@ -4,7 +4,7 @@ import org.junit.AfterClass;
 import org.junit.BeforeClass;
 import org.junit.runner.RunWith;
 
-import com.fexco.fmsolana.cluegame.server.Main;
+import com.fexco.fmsolana.cluegame.server.MainServer;
 
 import cucumber.api.CucumberOptions;
 import cucumber.api.junit.Cucumber;
@@ -22,12 +22,13 @@ public class RunCucumberTest {
 	@BeforeClass
 	public static void startService() {
 		Spark.port(port);
-		Main.main(null);
+		MainServer.main(null);
 		Spark.awaitInitialization();
 	}
 
 	@AfterClass
 	public static void stopServer() {
 		Spark.stop();
+		Spark.awaitStop();
 	}
 }

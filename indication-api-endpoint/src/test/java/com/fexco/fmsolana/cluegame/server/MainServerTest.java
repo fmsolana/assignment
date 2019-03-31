@@ -12,7 +12,7 @@ import org.junit.Test;
 
 import spark.Spark;
 
-public class MainTest {
+public class MainServerTest {
 
 	private static int port = 4567;
 	private static String endPoint="127.0.0.1";
@@ -20,7 +20,7 @@ public class MainTest {
 	@BeforeClass
 	public static void startService() {
 		Spark.port(port);
-		Main.main(null);
+		MainServer.main(null);
 		Spark.awaitInitialization();
 		
 	}
@@ -28,6 +28,7 @@ public class MainTest {
 	@AfterClass
 	public static void stopServer() {
 		Spark.stop();
+		Spark.awaitStop();
 	}
 
 	@Test
