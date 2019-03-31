@@ -12,11 +12,10 @@ import spark.Spark;
 
 @RunWith(Cucumber.class)
 @CucumberOptions(plugin = { "pretty", "html:target/cucumber",
-		"json:target/cucumber.json" }, features = "classpath:features",strict=true)
+		"json:target/cucumber.json" }, features = "classpath:features", strict = true)
 public class RunCucumberTest {
-	
-	
-	protected static int port = 4568;
+
+	protected static int port = 4567;
 	protected static String domain = "127.0.0.1";
 
 	@BeforeClass
