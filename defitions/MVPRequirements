@@ -1,0 +1,27 @@
+    1. Un usuario podrá empezar un juego
+    2. When an user begin a game then user see an introductory explanation and a button to continue to first clue
+    3. When an user press the button continue to first clue the game begin and he see the first clue
+    4. Cuando el usuario acierte una pista pasará a la siguiente.
+    5. Cuando el usuario acierte la última pista habrá pasado el juego.
+    6. Cuando el usuario haya pasado el juego se le mostrará un texto de enhorabuena y un un botón de obten tu premio.
+    7. Cuando el usuario pulse en obtener premio se le mostrará el premio ganado, y la puntuación ganada por el juego.
+    8. Las pistas mostradas serán de tres tipos: Elige una opción, escribe la respuesta o estar en el lugar correcto.
+    9. Cuando se muestra una pista de "elige una opción", el usuario tendrá que elegir entre tres opciones.
+    10. Las opciones "elige una opción" podrán ser de texto o imagenes.
+    11. Un usuario que acierte una pista de "elige una opción" se llevará 10x puntos si acierta a la primera, 3x si es la segunda opción y X si es la tercera.
+    12. Cuando se muestre una pista de "escribe la respuesta", el usuario tendrá que escribir la respuesta correcta
+    13. Cuando se muestre una pista de "estar en el lugar correcto" el usuario tendrá que poner las coordenadas del lugar para aceptar la repuesta, o estar en el lugar y compartiendo posición si está disponible dicha opción.
+    14. Cuando un usuario llega a una pista se activará un contador de tiempo
+    15. Cuando un jugador lleve X tiempo en una pista se le mostrará una ayuda para resolverla.
+    16. La ayuda para resolver "elige una opción" será eliminar una opción no válida
+    17. La ayuda para "escribe la repuesta" será que aparezcan ciertas letras de la palabra.
+    18. La ayuda para "estar en el lugar correcto" será mostrar la longitud
+
+    
+    No funcionales
+    1. La Api debe implementar HTTP y HTTP/2 
+    2. El servicio de envió de ayuda para las pistas deberá ser AMQP
+    3. El sistema deberá aguantar al menos 50 usuarios concurrentes en 24/7
+    4. El sistema deberá estar dividido en microservicios sobre kubernetes
+    5. Se deberá realizar test de stres con una herramienta como Soap UI, J meter u otras.
+    6. Los datos de usuario y juegos deberan ser persisitidos en un sitema que asegure su seguridad

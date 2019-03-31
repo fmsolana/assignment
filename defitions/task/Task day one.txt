@@ -1,0 +1,7 @@
+    1. Define all requirement
+    1. Selected minimun requirements to do for to meet assignments
+    2. Write BDD features for min requirements
+    3. Write new requeriments only for API points of view in BDD
+    4. Write the firt service
+    5. Add maven plugins for integration test
+    6. Integrated with travis-ci
