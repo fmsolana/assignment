@@ -1,25 +1,28 @@
 # Objective
 
-Implement assigment [option 1](https://github.com/jesusjavierdediego/assignments)
+Implement assignment [option 1](https://github.com/jesusjavierdediego/assignments)
 
-### Juego de las pitas
-El objetivo será crear la estrucutra para implementar el juego de las pistas con los [requerimientos](https://github.com/fmsolana/assignment\indication\defitions\Requirements.txt)
+### Clue Game
+The objective is make the structure for build the clue game follow the [requirements(spanish only)](https://github.com/fmsolana/assignment\indication\defitions\Requirements.txt)
 
-1. Un módulo de app front para poder jugar
-2. Un Api de servicios que usará la app
-3. Un Api Push para enviar mensajes a los usuarios mientras juegan
-4. Un módulo de persistencia para usuarios logados, juegos creados, y juegos jugados.
+1. A front App module for play
+2. A services API for support the front module
+3. API push for to send messages to user mean while are playing
+4. A persistence module for logged user, game made, game played for user.
 
-### Minimun Value Product.
+### Minimum Value Product.
 
-Se busca desarrollar el punto 2 y 3 como [requerimiento mínimo](https://github.com/fmsolana/assignment\indication\defitions\MVPRequirements.txt)
+The goal is develop the point 2 and 3 how [minimum requirements](https://github.com/fmsolana/assignment\indication\defitions\MVPRequirements.txt)
 
-### Herramientas
-- Maven para construir entregables
-- SparkJava para generar los enpoints de la api
-- BDD como pruebas de integración y aceptacion
-- TDD para desarrollar
-- DockerCompose para generar Docker
-- Travis CI como herramienta de integración
-- AWS EKS para desplegar
-- SoapUI para pruebas de stress
+### Tools
+- Maven for built project delivery
+- SparkJava for endpoints API
+- BDD for integration and acceptance test
+- TDD for development
+- DockerCompose for generated Dockers
+- TravisCI for continius integration 
+- AWS EKS for deployments
+- SoapUI for stresstest
+
+##### [Task by day](https://github.com/fmsolana/assignments\indication\defitions\task)
+##### [Destop Develop tool](https://github.com/fmsolana/assignments\indication\defitions\tools.txt)
