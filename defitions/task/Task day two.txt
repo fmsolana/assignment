@@ -3,4 +3,5 @@
 3. Meanwhile I do test for Main server I see that it more ease integrated with BBDD
 4. Change BDD Test to strict
 5. Continue with develop some services
-6. Travis doesn't open 
+6. Add spark waitToInit for Travis. In Local look that the sevice is more quick to up
+7. Added post service for feature begin game
