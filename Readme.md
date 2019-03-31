@@ -3,7 +3,7 @@
 Implement assigment [option 1](https://github.com/jesusjavierdediego/assignments)
 
 ### Juego de las pitas
-El objetivo será crear la estrucutra para implementar el juego de las pistas con los [requerimientos](https://github.com/fmsolana/assignments\indication\defitions\Requirements.txt)
+El objetivo será crear la estrucutra para implementar el juego de las pistas con los [requerimientos](https://github.com/fmsolana/assignment\indication\defitions\Requirements.txt)
 
 1. Un módulo de app front para poder jugar
 2. Un Api de servicios que usará la app
@@ -12,7 +12,7 @@ El objetivo será crear la estrucutra para implementar el juego de las pistas con
 
 ### Minimun Value Product.
 
-Se busca desarrollar el punto 2 y 3 como [requerimiento mínimo](https://github.com/fmsolana/assignments\indication\defitions\MVPRequirements.txt)
+Se busca desarrollar el punto 2 y 3 como [requerimiento mínimo](https://github.com/fmsolana/assignment\indication\defitions\MVPRequirements.txt)
 
 ### Herramientas
 - Maven para construir entregables
