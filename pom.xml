@@ -8,5 +8,7 @@
 	<modules>
 		<module>indication-api-endpoint</module>
 		<module>indication-app</module>
+		<module>indication-push-notification</module>
+		<module>indication-repository</module>
 	</modules>
 </project>
