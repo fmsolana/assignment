@@ -23,6 +23,7 @@ public class RunCucumberTest {
 	public static void startService() {
 		Spark.port(port);
 		Main.main(null);
+		Spark.awaitInitialization();
 	}
 
 	@AfterClass
