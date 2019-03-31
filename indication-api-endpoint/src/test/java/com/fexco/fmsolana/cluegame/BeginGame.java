@@ -22,12 +22,13 @@ public class BeginGame {
 
 	private static final Gson gson = new Gson();
 	private int port = RunCucumberTest.port;
+	private String domain= RunCucumberTest.domain;
 
 	private HttpURLConnection getGameResponse;
 	
 	@When("get request with game {string}")
 	public void get_request_to_with_game(String gameId) throws IOException {
-		getGameResponse = (HttpURLConnection) new URL("http", "localhost", port, "/api/game/" + gameId)
+		getGameResponse = (HttpURLConnection) new URL("http", domain, port, "/api/game/" + gameId)
 				.openConnection();
 
 	}

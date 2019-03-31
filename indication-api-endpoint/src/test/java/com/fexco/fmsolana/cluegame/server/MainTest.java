@@ -15,6 +15,7 @@ import spark.Spark;
 public class MainTest {
 
 	private static int port = 4567;
+	private static String endPoint="127.0.0.1";
 
 	@BeforeClass
 	public static void startService() {
@@ -29,14 +30,14 @@ public class MainTest {
 
 	@Test
 	public void isWorkSmoke() throws IOException {
-		HttpURLConnection con = (HttpURLConnection) new URL("http", "localhost", port, "/smoke").openConnection();
+		HttpURLConnection con = (HttpURLConnection) new URL("http", endPoint, port, "/smoke").openConnection();
 		int status = con.getResponseCode();
 		assertEquals(200, status);
 	}
 	
 	@Test
 	public void getGameById() throws IOException {
-		HttpURLConnection con = (HttpURLConnection) new URL("http", "localhost", port, "/api/game/1").openConnection();
+		HttpURLConnection con = (HttpURLConnection) new URL("http", endPoint, port, "/api/game/1").openConnection();
 		int status = con.getResponseCode();
 		assertEquals(200, status);
 	}

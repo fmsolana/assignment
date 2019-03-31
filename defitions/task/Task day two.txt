@@ -3,3 +3,4 @@
 3. Meanwhile I do test for Main server I see that it more ease integrated with BBDD
 4. Change BDD Test to strict
 5. Continue with develop some services
+6. Travis doesn't open 

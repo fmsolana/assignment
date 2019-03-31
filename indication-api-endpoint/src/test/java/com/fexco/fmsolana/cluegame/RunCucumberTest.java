@@ -16,7 +16,8 @@ import spark.Spark;
 public class RunCucumberTest {
 	
 	
-	public static int port = 4567;
+	protected static int port = 4568;
+	protected static String domain = "127.0.0.1";
 
 	@BeforeClass
 	public static void startService() {
