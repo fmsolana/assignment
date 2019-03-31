@@ -1,0 +1,5 @@
+1. Begin to code the api. while to TDD think in add cobertura plugin
+2. Add cobetura and site report. Fail I can't do that work fine
+3. Meanwhile I do test for Main server I see that it more ease integrated with BBDD
+4. Change BDD Test to strict
+5. Continue with develop some services

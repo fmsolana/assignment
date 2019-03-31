@@ -1,19 +1,44 @@
 package com.fexco.fmsolana.cluegame;
 
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotNull;
+
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.net.HttpURLConnection;
+import java.net.MalformedURLException;
+import java.net.URL;
+
+import com.fexco.fmsolana.cluegame.bean.game.Game;
+import com.fexco.fmsolana.cluegame.http.tool.HttpReadBody;
+import com.google.gson.Gson;
+
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 
 public class BeginGame {
+
+	private static final Gson gson = new Gson();
+	private int port = RunCucumberTest.port;
+
+	private HttpURLConnection getGameResponse;
+	
 	@When("get request with game {string}")
-	public void get_request_to_with_game(String string2) {
-		throw new cucumber.api.PendingException();
+	public void get_request_to_with_game(String gameId) throws IOException {
+		getGameResponse = (HttpURLConnection) new URL("http", "localhost", port, "/api/game/" + gameId)
+				.openConnection();
+
 	}
 
 	@Then("a json respone with introductory explanation is send")
-	public void a_json_respone_with_introductory_explanation_is_send() {
-		// Write code here that turns the phrase above into concrete actions
-		throw new cucumber.api.PendingException();
+	public void a_json_respone_with_introductory_explanation_is_send() throws IOException {
+		assertEquals("Must be Ok response",200, getGameResponse.getResponseCode());
+		String body = HttpReadBody.StringBodyFromConection(getGameResponse);
+		Game game = gson.fromJson(body, Game.class);
+		assertNotNull(game);
+		
 	}
 
 	@Given("an user id and game id")
