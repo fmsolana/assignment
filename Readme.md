@@ -24,5 +24,5 @@ The goal is develop the point 2 and 3 how [minimum requirements](https://github.
 - AWS EKS for deployments
 - SoapUI for stresstest
 
-##### [Task by day](https://github.com/fmsolana/assignments\indication\defitions\task)
+##### [Task by day](https://github.com/fmsolana/assignment/tree/master/defitions/task)
 ##### [Destop Develop tool](https://github.com/fmsolana/assignments\indication\defitions\tools.txt)
