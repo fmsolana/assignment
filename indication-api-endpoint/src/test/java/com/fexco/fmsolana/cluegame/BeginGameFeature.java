@@ -17,11 +17,12 @@ import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 
-public class BeginGameStep {
+public class BeginGameFeature {
 
 	private static final Gson gson = new Gson();
 	private int port = RunCucumberTest.port;
 	private String domain = RunCucumberTest.domain;
+	private String protocol = RunCucumberTest.protocol;
 
 	private HttpURLConnection getGameResponse;
 
@@ -32,7 +33,7 @@ public class BeginGameStep {
 
 	@When("get request with game {int}")
 	public void get_request_to_with_game(int gameId) throws IOException {
-		getGameResponse = (HttpURLConnection) new URL("http", domain, port, "/api/game/" + gameId).openConnection();
+		getGameResponse = (HttpURLConnection) new URL(protocol, domain, port, "/api/game/" + gameId).openConnection();
 
 	}
 

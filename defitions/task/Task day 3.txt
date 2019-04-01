@@ -1,0 +1,2 @@
+1. Implement feature Figure out the clue
+2. Take advantage of that SparkJava include jetty client, I have to refactor other class that have HttpURLConnection directly
