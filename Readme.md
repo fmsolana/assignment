@@ -3,7 +3,7 @@
 Implement assignment [option 1](https://github.com/jesusjavierdediego/assignments)
 
 ### Clue Game
-The objective is make the structure for build the clue game follow the [requirements(spanish only)](https://github.com/fmsolana/assignment\indication\defitions\Requirements.txt)
+The objective is make the structure for build the clue game follow the [requirements(spanish only)](https://github.com/fmsolana/assignment/blob/master/defitions/Requirements.txt)
 
 1. A front App module for play
 2. A services API for support the front module
@@ -12,7 +12,7 @@ The objective is make the structure for build the clue game follow the [requirem
 
 ### Minimum Value Product.
 
-The goal is develop the point 2 and 3 how [minimum requirements](https://github.com/fmsolana/assignment\indication\defitions\MVPRequirements.txt)
+The goal is develop the point 2 and 3 how [minimum requirements](https://github.com/fmsolana/assignment/blob/master/defitions/MVPRequirements)
 
 ### Tools
 - Maven for built project delivery
@@ -25,4 +25,4 @@ The goal is develop the point 2 and 3 how [minimum requirements](https://github.
 - SoapUI for stresstest
 
 ##### [Task by day](https://github.com/fmsolana/assignment/tree/master/defitions/task)
-##### [Destop Develop tool](https://github.com/fmsolana/assignments\indication\defitions\tools.txt)
+##### [Destop Develop tool](https://github.com/fmsolana/assignment/blob/master/defitions/tools.txt)
