@@ -3,25 +3,25 @@
 Implement assignment [option 1](https://github.com/jesusjavierdediego/assignments)
 
 ### Clue Game
-The objective is make the structure for build the clue game follow the [requirements(spanish only)](/defitions/Requirements.txt)
+The objective is making the structure to build the clue game following the [requirements(Spanish only)](/defitions/Requirements.txt)
 
-1. A front App module for play
-2. A services API for support the front module
-3. API push for to send messages to user mean while are playing
-4. A persistence module for logged user, game made, game played for user.
+1. A front App module to play
+2. A services API to support the front module
+3. API push to send messages to user meanwhile playing
+4. A persistence module for logged-in users, their self-made games and their played games
 
 ### Minimum Value Product.
 
-The goal is develop the point 2 and 3 how [minimum requirements](/defitions/MVPRequirements)
+The goal is developing the point 2 and 3 as [minimum requirements](/defitions/MVPRequirements)
 
 ### Tools
-- Maven for built project delivery
+- Maven to build project delivery
 - SparkJava for endpoints API
 - BDD for integration and acceptance test
 - TDD for development
-- DockerCompose for generated Dockers
-- TravisCI for continius integration 
-- AWS EKS for deployments
+- DockerCompose to generate Dockers
+- TravisCI for continuous integration 
+- Amazon EKS for deployments
 - SoapUI for stresstest
 
 ##### [Task by day](/defitions/task)
