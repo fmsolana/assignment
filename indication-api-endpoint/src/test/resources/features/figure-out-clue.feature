@@ -4,8 +4,8 @@ Feature: Figure the clue
   Scenario: figure out clue
     Given user "id"
     And game "id"
-    And clue "id"
-    And the answer "1"
+    And clue 1
+    And the answer "correctOption"
     When post request is come
     And the game id is correct
     And the user id is correct
@@ -17,8 +17,8 @@ Feature: Figure the clue
   Scenario: figure out clue the last clue
     Given user "id"
     And game "id"
-    And clue "id"
-    And the answer "1"
+    And clue 3
+    And the answer "0.0;0.0"
     When post request is come
     And the game id is correct
     And the user id is correct

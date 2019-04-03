@@ -4,10 +4,10 @@ public class ClueAnswer {
 
 	private String userId;
 	private String gameId;
-	private String clueId;
+	private Integer clueId;
 	private String answer;
 
-	public ClueAnswer(String userId, String gameId, String clueId, String answer) {
+	public ClueAnswer(String userId, String gameId, Integer clueId, String answer) {
 		super();
 		this.userId = userId;
 		this.gameId = gameId;
@@ -23,7 +23,7 @@ public class ClueAnswer {
 		return gameId;
 	}
 
-	public String getClueId() {
+	public Integer getClueId() {
 		return clueId;
 	}
 

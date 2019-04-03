@@ -27,7 +27,7 @@ public class FigureOutTheClueFeature {
 
 	private String userId;
 	private String gameId;
-	private String clueId;
+	private int clueId;
 	private String answer;
 
 	private ClueAnswerVerify clueAnswerVerify;
@@ -46,8 +46,8 @@ public class FigureOutTheClueFeature {
 		this.gameId = gameId;
 	}
 
-	@Given("clue {string}")
-	public void clue(String clueId) {
+	@Given("clue {int}")
+	public void clue(Integer clueId) {
 		this.clueId = clueId;
 	}
 
@@ -92,8 +92,8 @@ public class FigureOutTheClueFeature {
 	public void the_answer_is_correct() {
 		assertNotNull(answer);
 		assertNotNull(clueAnswerVerify);
-		assertTrue(clueAnswerVerify.isValid());
-		assertEquals(answer, clueAnswerVerify.getAnswer());
+		assertTrue(clueAnswerVerify.isValidAnswer());
+		assertEquals(answer, clueAnswerVerify.getUserAnswer());
 	}
 
 	@Then("a json with next clue is send")

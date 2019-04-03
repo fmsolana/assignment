@@ -6,11 +6,13 @@ public class Game {
 
 	private String gameId;
 	private List<Clue> listClue;
+	private String giftId;
 
-	public Game(String gameId, List<Clue> listClue) {
+	public Game(String gameId, List<Clue> listClue, String giftId) {
 		super();
 		this.gameId = gameId;
 		this.listClue = listClue;
+		this.giftId = giftId;
 	}
 
 	public String getGameId() {
@@ -18,7 +20,17 @@ public class Game {
 	}
 
 	public Clue getClue(int i) {
-		return listClue.get(i);
+		return listClue.get(i - 1);
+	}
+
+	public Clue getNextClue(int id) {
+		if (id < listClue.size())
+			return getClue(id + 1);
+		return null;
+	}
+
+	public String getGiftId() {
+		return giftId;
 	}
 
 }
