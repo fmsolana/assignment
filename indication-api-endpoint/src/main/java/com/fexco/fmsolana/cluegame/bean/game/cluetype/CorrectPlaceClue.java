@@ -1,5 +1,7 @@
 package com.fexco.fmsolana.cluegame.bean.game.cluetype;
 
+import java.util.Objects;
+
 import com.fexco.fmsolana.cluegame.bean.game.Clue;
 
 public class CorrectPlaceClue extends Clue {
@@ -33,6 +35,29 @@ public class CorrectPlaceClue extends Clue {
 
 	public float getLatitud() {
 		return latitud;
+	}
+
+	@Override
+	public String toString() {
+		return "CorrectPlaceClue [longitud=" + longitud + ", latitud=" + latitud + ", getId()=" + getId() + "]";
+	}
+
+	@Override
+	public int hashCode() {
+		return Objects.hash(latitud, longitud);
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		CorrectPlaceClue other = (CorrectPlaceClue) obj;
+		return Float.floatToIntBits(latitud) == Float.floatToIntBits(other.latitud)
+				&& Float.floatToIntBits(longitud) == Float.floatToIntBits(other.longitud);
 	}
 
 }

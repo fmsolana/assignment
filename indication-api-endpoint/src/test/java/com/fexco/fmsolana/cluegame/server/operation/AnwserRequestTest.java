@@ -33,4 +33,18 @@ public class AnwserRequestTest {
 		assertNull("is not time of gift", clueAnswerVerify.getGiftId());
 	}
 
+	@Test
+	public void testInvalidRequestValidAnser() {
+
+		String userId = "1";
+		String gameId = "NO_EXISTS";
+		int clueId = 1;
+		String answer = "correctOption";
+		ClueAnswer clueAnswer = new ClueAnswer(userId, gameId, clueId, answer);
+
+		ClueAnswerVerify clueAnswerVerify = AnwserRequest.validAnswer(clueAnswer);
+		assertNull("if gameid no exists must be null", clueAnswerVerify);
+
+	}
+
 }

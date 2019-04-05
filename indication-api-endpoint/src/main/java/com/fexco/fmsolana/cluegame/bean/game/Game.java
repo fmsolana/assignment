@@ -25,12 +25,17 @@ public class Game {
 
 	public Clue getNextClue(int id) {
 		if (id < listClue.size())
-			return getClue(id + 1);
+			return getClue(id);
 		return null;
 	}
 
 	public String getGiftId() {
 		return giftId;
+	}
+
+	@Override
+	public String toString() {
+		return "Game [gameId=" + gameId + ", listClue=" + listClue + ", giftId=" + giftId + "]";
 	}
 
 }

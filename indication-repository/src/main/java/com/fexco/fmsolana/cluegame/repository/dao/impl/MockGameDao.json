@@ -1,0 +1,86 @@
+[
+	{
+		"gameId": "gameId",
+		"listClue": [
+			{
+				"id": 1,
+				"option1": "option1",
+				"option2": "option2",
+				"correctOption": "correctOption"
+			},
+			{
+				"id": 2,
+				"answer": "answer"
+			},
+			{
+				"id": 3,
+				"longitud": 0.0,
+				"latitud": 0.0
+			}
+		],
+		"giftId": "giftId"
+	},
+	{
+		"gameId": "1",
+		"listClue": [
+			{
+				"id": 1,
+				"option1": "option1",
+				"option2": "option2",
+				"correctOption": "correctOption"
+			},
+			{
+				"id": 2,
+				"answer": "answer"
+			},
+			{
+				"id": 3,
+				"longitud": 0.0,
+				"latitud": 0.0
+			}
+		],
+		"giftId": "giftId"
+	},
+	{
+		"gameId": "2",
+		"listClue": [
+			{
+				"id": 1,
+				"option1": "option1",
+				"option2": "option2",
+				"correctOption": "correctOption"
+			},
+			{
+				"id": 2,
+				"answer": "answer"
+			},
+			{
+				"id": 3,
+				"longitud": 0.0,
+				"latitud": 0.0
+			}
+		],
+		"giftId": "giftId"
+	},
+	{
+		"gameId": "3",
+		"listClue": [
+			{
+				"id": 1,
+				"option1": "option1",
+				"option2": "option2",
+				"correctOption": "correctOption"
+			},
+			{
+				"id": 2,
+				"answer": "answer"
+			},
+			{
+				"id": 3,
+				"longitud": 0.0,
+				"latitud": 0.0
+			}
+		],
+		"giftId": "giftId"
+	}
+]

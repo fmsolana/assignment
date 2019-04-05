@@ -1,5 +1,6 @@
 package com.fexco.fmsolana.cluegame.bean.game;
 
+import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertNull;
 
@@ -17,7 +18,12 @@ public class GameTest {
 	@Test
 	public void textNextClue() {
 		assertNotNull(game.getNextClue(1));
-		assertNotNull(game.getNextClue(2));
-		assertNull(game.getNextClue(3));
+		assertNull(game.getNextClue(2));
+	}
+
+	@Test
+	public void textClue() {
+		assertNotNull(game.getClue(1));
+		assertEquals(1, game.getClue(1).getId());
 	}
 }

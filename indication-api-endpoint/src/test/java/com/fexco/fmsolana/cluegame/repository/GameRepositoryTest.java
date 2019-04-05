@@ -2,6 +2,7 @@ package com.fexco.fmsolana.cluegame.repository;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.assertNull;
 
 import org.junit.Test;
 
@@ -17,16 +18,23 @@ public class GameRepositoryTest {
 
 		assertNotNull(game);
 		assertEquals("gameId", game.getGameId());
-
 	}
 
 	@Test
 	public void testStarGame() throws Exception {
-		String gameId = null;
+		String gameId = "gameId";
 		String userId = null;
 		Clue clue = GameRepository.starGame(gameId, userId);
 		assertNotNull(clue);
 		assertEquals(1, clue.getId());
+	}
+
+	@Test
+	public void getGameNoExists() {
+		String gameId = "NO_EXISTS";
+		Game game = GameRepository.getGame(gameId);
+
+		assertNull(game);
 	}
 
 }

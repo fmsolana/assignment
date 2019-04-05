@@ -9,8 +9,11 @@ import com.fexco.fmsolana.cluegame.repository.GameRepository;
 public class AnwserRequest {
 
 	public ClueAnswerVerify validAnswer(ClueAnswer clueAnswer) {
-
+		if (clueAnswer == null)
+			return null;
 		Game game = GameRepository.getGame(clueAnswer.getGameId());
+		if (game == null)
+			return null;
 		Clue clue = game.getClue(clueAnswer.getClueId());
 		boolean correct = clue.isAnswer(clueAnswer.getAnswer());
 		if (correct)

@@ -3,6 +3,7 @@ package com.fexco.fmsolana.cluegame.bean.game.cluetype;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
+import java.util.Objects;
 
 import com.fexco.fmsolana.cluegame.bean.game.Clue;
 
@@ -34,6 +35,28 @@ public class OptionsClue extends Clue {
 		shuffleOptions.addAll(options);
 		Collections.shuffle(shuffleOptions);
 		return shuffleOptions;
+	}
+
+	@Override
+	public String toString() {
+		return "OptionsClue [options=" + options + ", correctOption=" + correctOption + ", getId()=" + getId() + "]";
+	}
+
+	@Override
+	public int hashCode() {
+		return Objects.hash(correctOption, options);
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		OptionsClue other = (OptionsClue) obj;
+		return Objects.equals(correctOption, other.correctOption) && Objects.equals(options, other.options);
 	}
 
 }
