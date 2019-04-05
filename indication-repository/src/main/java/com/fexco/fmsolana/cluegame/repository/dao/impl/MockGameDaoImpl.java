@@ -30,7 +30,7 @@ public class MockGameDaoImpl implements GameDao {
 	private Map<String, GameVO> getMapGames() {
 		try {
 			Gson gson = new Gson();
-			InputStream stream = this.getClass().getResourceAsStream("MockGameDao.json");
+			InputStream stream = this.getClass().getResourceAsStream("/MockGameDao.json");
 			List<String> json = new BufferedReader(new InputStreamReader(stream)).lines().collect(Collectors.toList());
 			String result = String.join("", json);
 			List<GameVO> listGames = gson.fromJson(result, new TypeToken<ArrayList<GameVO>>() {
