@@ -1,5 +1,6 @@
 package com.fexco.fmsolana.cluegame;
 
+import static com.fexco.fmsolana.cluegame.RunCucumberTest.getUrl;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertNull;
@@ -9,12 +10,14 @@ import java.net.MalformedURLException;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.TimeoutException;
 
+import org.eclipse.jetty.client.HttpClient;
 import org.eclipse.jetty.client.api.ContentResponse;
 import org.eclipse.jetty.client.util.StringContentProvider;
 
 import com.fexco.fmsolana.cluegame.bean.game.ClueAnswer;
 import com.fexco.fmsolana.cluegame.bean.game.ClueAnswerVerify;
 import com.fexco.fmsolana.cluegame.bean.game.Gift;
+import com.fexco.fmsolana.cluegame.bean.game.UserCheckTime;
 import com.google.gson.Gson;
 
 import cucumber.api.java.en.Given;
@@ -24,6 +27,7 @@ import cucumber.api.java.en.When;
 public class FigureOutTheClueFeature {
 
 	private Gson gson = new Gson();
+	private HttpClient httpClient = RunCucumberTest.httpClient;
 
 	private String userId;
 	private String gameId;
@@ -59,7 +63,7 @@ public class FigureOutTheClueFeature {
 	@When("post request is come")
 	public void post_request_is_come()
 			throws InterruptedException, TimeoutException, ExecutionException, MalformedURLException {
-		ContentResponse respuesta = RunCucumberTest.httpClient.POST(RunCucumberTest.getUrl("/api/answer"))
+		ContentResponse respuesta = httpClient.POST(getUrl("/api/answer"))
 				.content(new StringContentProvider(gson.toJson(new ClueAnswer(userId, gameId, clueId, answer))),
 						"application/json")
 				.send();
@@ -102,9 +106,18 @@ public class FigureOutTheClueFeature {
 	}
 
 	@Then("push message for countdown")
-	public void push_message_for_countdown() {
-		// Write code here that turns the phrase above into concrete actions
-		throw new cucumber.api.PendingException();
+	public void push_message_for_countdown()
+			throws InterruptedException, MalformedURLException, ExecutionException, TimeoutException {
+		// TODO How implement this type of Step?
+		// The notification must be send by service and check here if it was sent
+		Thread.sleep(1000);
+		String checkTimeResponse = httpClient
+				.GET(RunCucumberTest.getUrl("/api/game/check/time/" + gameId + "/" + userId)).getContentAsString();
+		UserCheckTime userCheckTime = gson.fromJson(checkTimeResponse, UserCheckTime.class);
+		assertNotNull(userCheckTime);
+		long time = System.currentTimeMillis();
+		assertTrue("It must have been more than a second", time - userCheckTime.getInitTime() > 1000);
+
 	}
 
 	@When("is the last clue")
@@ -131,8 +144,7 @@ public class FigureOutTheClueFeature {
 	@When("get request to retrieve the gift")
 	public void get_request_to_retrieve_the_gift()
 			throws InterruptedException, TimeoutException, ExecutionException, MalformedURLException {
-		ContentResponse respuesta = RunCucumberTest.httpClient
-				.GET(RunCucumberTest.getUrl("/api/gift/" + giftId + "/" + userId));
+		ContentResponse respuesta = httpClient.GET(RunCucumberTest.getUrl("/api/gift/" + giftId + "/" + userId));
 		assertEquals(200, respuesta.getStatus());
 		gift = gson.fromJson(respuesta.getContentAsString(), Gift.class);
 	}

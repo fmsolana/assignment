@@ -4,3 +4,5 @@
 I saw possibilities because the jetty version use bye spark
 support http2, candidates javalin that is a fork of spark, 
 maybe in web part I use javalin
+4. work with queue, I can't do work propertly AMQP protocol with rabbitMq or apache Qpid. I use ActiveMQ client 
+5. Do swagger yaml definition

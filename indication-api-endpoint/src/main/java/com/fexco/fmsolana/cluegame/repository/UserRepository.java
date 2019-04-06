@@ -22,7 +22,7 @@ public class UserRepository {
 	public static void startGame(Game game, String userId) throws GameRequestException {
 		if (usersPlaying.size() < maxUserPlaying) {
 			usersPlaying.put(userId, game);
-			usersTimePlaying.put(userId, new UserCheckTime(System.currentTimeMillis()));
+			usersTimePlaying.put(userId, new UserCheckTime(System.currentTimeMillis(), userId));
 		} else {
 			throw new GameRequestException("Too many playing");
 		}

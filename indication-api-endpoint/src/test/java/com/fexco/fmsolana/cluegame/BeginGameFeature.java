@@ -1,5 +1,6 @@
 package com.fexco.fmsolana.cluegame;
 
+import static com.fexco.fmsolana.cluegame.RunCucumberTest.getUrl;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertTrue;
@@ -11,11 +12,11 @@ import java.util.concurrent.TimeoutException;
 
 import org.eclipse.jetty.client.HttpClient;
 import org.eclipse.jetty.client.api.ContentResponse;
+import org.eclipse.jetty.client.util.StringContentProvider;
 
 import com.fexco.fmsolana.cluegame.bean.game.Clue;
 import com.fexco.fmsolana.cluegame.bean.game.Game;
 import com.fexco.fmsolana.cluegame.bean.game.UserCheckTime;
-import com.fexco.fmsolana.cluegame.http.tool.HttpRequest;
 import com.google.gson.Gson;
 
 import cucumber.api.java.en.Given;
@@ -40,7 +41,8 @@ public class BeginGameFeature {
 	@When("get request with game {int}")
 	public void get_request_to_with_game(int gameId)
 			throws IOException, InterruptedException, ExecutionException, TimeoutException {
-		getGameResponse = httpClient.GET(new URL(protocol, domain, port, "/api/game/" + gameId).toString());
+		getGameResponse = httpClient.GET(getUrl("/api/game/" + gameId));
+
 	}
 
 	@Then("a json respone with introductory explanation is send")
@@ -59,9 +61,10 @@ public class BeginGameFeature {
 	}
 
 	@When("a begin game post request come")
-	public void a_begin_game_post_request_come() throws IOException {
-		jsonStartResponse = HttpRequest.sendPost("http", domain, port,
-				"/api/game/start/" + reqGameId + "/" + reqUserId);
+	public void a_begin_game_post_request_come()
+			throws IOException, InterruptedException, TimeoutException, ExecutionException {
+		jsonStartResponse = httpClient.POST(getUrl("/api/game/start/" + reqGameId + "/" + reqUserId))
+				.content(new StringContentProvider("{ }"), "application/json").send().getContentAsString();
 	}
 
 	@Then("the game start")

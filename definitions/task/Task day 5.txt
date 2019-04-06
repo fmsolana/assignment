@@ -1,4 +1,4 @@
 1. Complete the features
 2. Implement MainSecure option. 
 3. Think how do Iac with Amazon
-4. add Mock for respository
+4. add Mock for repository

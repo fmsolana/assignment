@@ -15,6 +15,10 @@
 			<artifactId>indication-repository</artifactId>
 		</dependency>
 		<dependency>
+			<groupId>com.fexco.fmsolana.cluegame</groupId>
+			<artifactId>indication-push-notification</artifactId>
+		</dependency>
+		<dependency>
 			<groupId>com.sparkjava</groupId>
 			<artifactId>spark-core</artifactId>
 			<version>2.9.0</version>
