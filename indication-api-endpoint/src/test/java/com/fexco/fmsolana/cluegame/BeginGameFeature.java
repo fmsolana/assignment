@@ -2,14 +2,19 @@ package com.fexco.fmsolana.cluegame;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.assertTrue;
 
 import java.io.IOException;
-import java.net.HttpURLConnection;
 import java.net.URL;
+import java.util.concurrent.ExecutionException;
+import java.util.concurrent.TimeoutException;
+
+import org.eclipse.jetty.client.HttpClient;
+import org.eclipse.jetty.client.api.ContentResponse;
 
 import com.fexco.fmsolana.cluegame.bean.game.Clue;
 import com.fexco.fmsolana.cluegame.bean.game.Game;
-import com.fexco.fmsolana.cluegame.http.tool.HttpReadBody;
+import com.fexco.fmsolana.cluegame.bean.game.UserCheckTime;
 import com.fexco.fmsolana.cluegame.http.tool.HttpRequest;
 import com.google.gson.Gson;
 
@@ -23,8 +28,9 @@ public class BeginGameFeature {
 	private int port = RunCucumberTest.port;
 	private String domain = RunCucumberTest.domain;
 	private String protocol = RunCucumberTest.protocol;
+	private HttpClient httpClient = RunCucumberTest.httpClient;
 
-	private HttpURLConnection getGameResponse;
+	private ContentResponse getGameResponse;
 
 	private String reqUserId;
 	private int reqGameId;
@@ -32,15 +38,15 @@ public class BeginGameFeature {
 	private String jsonStartResponse;
 
 	@When("get request with game {int}")
-	public void get_request_to_with_game(int gameId) throws IOException {
-		getGameResponse = (HttpURLConnection) new URL(protocol, domain, port, "/api/game/" + gameId).openConnection();
-
+	public void get_request_to_with_game(int gameId)
+			throws IOException, InterruptedException, ExecutionException, TimeoutException {
+		getGameResponse = httpClient.GET(new URL(protocol, domain, port, "/api/game/" + gameId).toString());
 	}
 
 	@Then("a json respone with introductory explanation is send")
 	public void a_json_respone_with_introductory_explanation_is_send() throws IOException {
-		assertEquals("Must be Ok response", 200, getGameResponse.getResponseCode());
-		String body = HttpReadBody.StringBodyFromConection(getGameResponse);
+		assertEquals("Must be Ok response", 200, getGameResponse.getStatus());
+		String body = getGameResponse.getContentAsString();
 		Game game = gson.fromJson(body, Game.class);
 		assertNotNull(game);
 
@@ -71,9 +77,19 @@ public class BeginGameFeature {
 	}
 
 	@Then("service for coutdown is invoke")
-	public void service_for_coutdown_is_invoke() {
-		// Write code here that turns the phrase above into concrete actions
-		throw new cucumber.api.PendingException();
+	public void service_for_coutdown_is_invoke()
+			throws IOException, InterruptedException, ExecutionException, TimeoutException {
+		// TODO How implement this type of Step?
+		// The notification must be send by service and check here if it was sent
+		Thread.sleep(1000);
+		String checkTimeResponse = httpClient
+				.GET(new URL("http", domain, port, "/api/game/check/time/" + reqGameId + "/" + reqUserId).toString())
+				.getContentAsString();
+		UserCheckTime userCheckTime = gson.fromJson(checkTimeResponse, UserCheckTime.class);
+		assertNotNull(userCheckTime);
+		long time = System.currentTimeMillis();
+		assertTrue("It must have been more than a second", time - userCheckTime.getInitTime() > 1000);
+
 	}
 
 }

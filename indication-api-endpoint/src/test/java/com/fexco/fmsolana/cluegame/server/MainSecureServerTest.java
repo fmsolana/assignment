@@ -1,40 +1,28 @@
 package com.fexco.fmsolana.cluegame.server;
 
 import org.eclipse.jetty.client.HttpClient;
-import org.junit.AfterClass;
+import org.eclipse.jetty.util.ssl.SslContextFactory;
 import org.junit.BeforeClass;
 
 import spark.Spark;
 
-public class MainServerTest extends testServer {
-
-	private static int port = 4567;
+public class MainSecureServerTest extends testServer {
+	private static int port = 4568;
 	private String endPoint = "127.0.0.1";
-	private String protocol = "http";
+	private String protocol = "https";
 
-	private static HttpClient httpClient = new HttpClient();
+	private static HttpClient httpClient = new HttpClient(new SslContextFactory(true));
 
 	@BeforeClass
 	public static void startService() {
 		Spark.port(port);
-		MainServer.main(null);
+		MainSecureServer.main(null);
 		Spark.awaitInitialization();
 	}
 
 	@BeforeClass
 	public static void startHttpClient() throws Exception {
 		httpClient.start();
-	}
-
-	@AfterClass
-	public static void stopHttpClient() throws Exception {
-		httpClient.stop();
-	}
-
-	@AfterClass
-	public static void stopServer() {
-		Spark.stop();
-		Spark.awaitStop();
 	}
 
 	@Override

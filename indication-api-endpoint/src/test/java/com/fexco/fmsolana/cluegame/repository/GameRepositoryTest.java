@@ -23,7 +23,7 @@ public class GameRepositoryTest {
 	@Test
 	public void testStarGame() throws Exception {
 		String gameId = "gameId";
-		String userId = null;
+		String userId = "userId";
 		Clue clue = GameRepository.starGame(gameId, userId);
 		assertNotNull(clue);
 		assertEquals(1, clue.getId());

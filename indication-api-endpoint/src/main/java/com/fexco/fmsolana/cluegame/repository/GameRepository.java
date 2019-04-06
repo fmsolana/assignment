@@ -6,11 +6,11 @@ import com.fexco.fmsolana.cluegame.repository.dao.GameDao;
 import com.fexco.fmsolana.cluegame.repository.dao.impl.MockGameDaoImpl;
 import com.fexco.fmsolana.cluegame.repository.entity.GameVO;
 import com.fexco.fmsolana.cluegame.repository.translate.GameVOToGameTranslate;
+import com.fexco.fmsolana.cluegame.server.exceptions.GameRequestException;
 
 public class GameRepository {
 
 	private GameRepository() {
-
 	}
 
 	private static GameDao gameDao = new MockGameDaoImpl();
@@ -22,9 +22,9 @@ public class GameRepository {
 		return translate.transformToGame(gameVo);
 	}
 
-	public static Clue starGame(String gameId, String userId) {
+	public static Clue starGame(String gameId, String userId) throws GameRequestException {
 		Game game = getGame(gameId);
-		if (game == null)
+		if (game == null || userId == null)
 			return null;
 		UserRepository.startGame(game, userId);
 		return game.getClue(1);

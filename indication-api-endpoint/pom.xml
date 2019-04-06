@@ -10,18 +10,15 @@
 	<artifactId>indication-api-endpoint</artifactId>
 
 	<dependencies>
-
 		<dependency>
 			<groupId>com.fexco.fmsolana.cluegame</groupId>
 			<artifactId>indication-repository</artifactId>
 		</dependency>
-		
 		<dependency>
 			<groupId>com.sparkjava</groupId>
 			<artifactId>spark-core</artifactId>
 			<version>2.9.0</version>
 		</dependency>
-
 		<dependency>
 			<groupId>com.google.code.gson</groupId>
 			<artifactId>gson</artifactId>
@@ -60,6 +57,27 @@
 			</plugin>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-resources-plugin</artifactId>
+				<executions>
+					<execution>
+						<id>copy-resources</id>
+						<phase>prepare-package</phase>
+						<goals>
+							<goal>copy-resources</goal>
+						</goals>
+						<configuration>
+							<outputDirectory>${project.build.directory}/deploy</outputDirectory>
+							<resources>
+								<resource>
+									<directory>deploy</directory>
+								</resource>
+							</resources>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-jar-plugin</artifactId>
 				<configuration>
 					<archive>
@@ -88,9 +106,9 @@
 				<artifactId>process-exec-maven-plugin</artifactId>
 				<version>0.8</version>
 				<executions>
-					<!--Start process 1, eg., a dropwizard app dependency -->
+					<!--Start process 1 http server -->
 					<execution>
-						<id>switchboard-process</id>
+						<id>apiServer</id>
 						<phase>pre-integration-test</phase>
 						<goals>
 							<goal>start</goal>
@@ -108,7 +126,36 @@
 					</execution>
 					<!--Stop all processes in reverse order -->
 					<execution>
-						<id>stop-all</id>
+						<id>stop-all apiServer</id>
+						<phase>post-integration-test</phase>
+						<goals>
+							<goal>stop-all</goal>
+						</goals>
+					</execution>
+					<!--Start process 2 https server -->
+					<execution>
+						<id>apiSecureServer</id>
+						<phase>pre-integration-test</phase>
+						<goals>
+							<goal>start</goal>
+						</goals>
+						<configuration>
+							<name>secure api</name>
+							<waitForInterrupt>false</waitForInterrupt>
+							<waitAfterLaunch>5</waitAfterLaunch>
+							<!-- heath check not available for https disabled -->
+							<!-- <healthcheckUrl>https://localhost:4568/smoke</healthcheckUrl> -->
+							<arguments>
+								<argument>java</argument>
+								<argument>-cp</argument>
+								<argument>${project.build.directory}/${project.build.finalName}.jar</argument>
+								<argument>com.fexco.fmsolana.cluegame.server.MainSecureServer</argument>
+							</arguments>
+						</configuration>
+					</execution>
+					<!--Stop all processes in reverse order -->
+					<execution>
+						<id>stop-all ApiSecureServer</id>
 						<phase>post-integration-test</phase>
 						<goals>
 							<goal>stop-all</goal>

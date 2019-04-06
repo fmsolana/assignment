@@ -23,7 +23,7 @@ public class CorrectPlaceClue extends Clue {
 	public boolean isAnswer(String answer) {
 		try {
 			String[] split = answer.split(";");
-			return longitud == Float.valueOf(split[0]) && longitud == Float.valueOf(split[1]);
+			return getLongitud() == Float.valueOf(split[0]) && getLatitud() == Float.valueOf(split[1]);
 		} catch (Exception e) {
 			return false;
 		}

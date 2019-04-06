@@ -1,0 +1,6 @@
+1. Do abstract class for test server in https and http.  Set SSLConext trustAll true
+2. add run mode with default insecure keystore and configurable keystore
+3. Http2 is not available for spark 2.9.0 (wait for 3.0.0), 
+I saw possibilities because the jetty version use bye spark
+support http2, candidates javalin that is a fork of spark, 
+maybe in web part I use javalin
