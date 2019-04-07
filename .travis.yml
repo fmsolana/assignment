@@ -7,8 +7,8 @@ before_install:
  - docker build -t fmsolana/cluegame ./indication-api-endpoint
  - docker run -d -p 127.0.0.1:4567:4567 --name cluegame fmsolana/cluegame 
  - docker ps -a
-	
-	
+
+
 deploy:
  provider: script
  script: bash docker_push.sh
