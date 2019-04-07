@@ -3,7 +3,7 @@ language: java
 services:
  - docker
 
-before_install:
+after_install:
  - docker build -t fmsolana/cluegame ./indication-api-endpoint
  - docker run -d -p 127.0.0.1:4567:4567 --name cluegame fmsolana/cluegame 
  - docker ps -a
