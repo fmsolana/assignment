@@ -2,3 +2,4 @@ Eclipse 2018-09
 More Unit
 Coverage
 Cucumber
+SonarLint

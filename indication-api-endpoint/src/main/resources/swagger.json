@@ -1,0 +1,302 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "description": "This swagger describe the Api fro ClueGame ",
+    "version": "1.0.0",
+    "title": "ClueGame Api",
+    "contact": {
+      "email": "fmsolana@gamil.com"
+    }
+  },
+  "host": "127.0.0.1:4567",
+  "servers": [
+    {
+      "url": "https://{username}.gigantic-server.com:{port}/{basePath}",
+      "description": "The production API server",
+      "variables": {
+        "username": null,
+        "default": "demo",
+        "description": "this value is assigned by the service provider, in this example `gigantic-server.com`",
+        "port": {
+          "enum": [
+            "8443",
+            "443"
+          ],
+          "default": "8443"
+        }
+      }
+    }
+  ],
+  "basePath": "/api",
+  "tags": [
+    {
+      "name": "api",
+      "description": "All service in api",
+      "externalDocs": {
+        "description": "Find out more",
+        "url": "https://github.com/fmsolana/assignment"
+      }
+    },
+    {
+      "name": "smoke",
+      "description": "Access to Petstore orders"
+    }
+  ],
+  "schemes": [
+    "https",
+    "http"
+  ],
+  "paths": {
+    "/game/{gameId}": {
+      "get": {
+        "tags": [
+          "api"
+        ],
+        "summary": "Get a game for begin to play",
+        "description": "",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "gameId",
+            "description": "Identifier for a game",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "sussessful get a game",
+            "schema": {
+              "type": "object",
+              "items": {
+                "$ref": "#/definitions/Game"
+              }
+            }
+          },
+          "404": {
+            "description": "game not found"
+          }
+        }
+      }
+    },
+    "/game/{gameId}/{userId}": {
+      "get": {
+        "tags": [
+          "api"
+        ],
+        "summary": "Start a game",
+        "description": "User id that start a game with name gameId",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "gameId",
+            "in": "path",
+            "description": "Identifier for a Game to start",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "userId",
+            "in": "path",
+            "description": "User Id who start the game",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "game started",
+            "schema": {
+              "$ref": "#/definitions/Clue"
+            }
+          },
+          "400": {
+            "description": "Invalid status value"
+          }
+        }
+      }
+    },
+    "/answer": {
+      "post": {
+        "tags": [
+          "api"
+        ],
+        "summary": "Answer for a clue",
+        "description": "Send the answer for a clue",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/Answer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "schema": {
+              "$ref": "#/definitions/ClueAnswerVerify"
+            }
+          },
+          "400": {
+            "description": "Invalid request"
+          }
+        }
+      }
+    },
+    "/gift/{gifId}/{userId}": {
+      "get": {
+        "tags": [
+          "api"
+        ],
+        "summary": "get the gift",
+        "description": "Get the won gift",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "gifId",
+            "in": "path",
+            "description": "ID of gift won",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "userId",
+            "in": "path",
+            "description": "ID of user that won gift",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "schema": {
+              "$ref": "#/definitions/Gift"
+            }
+          },
+          "400": {
+            "description": "Invalid ID supplied"
+          }
+        }
+      }
+    },
+    "/game/check/time/{gameId}/{userId}": {
+      "get": {
+        "tags": [
+          "api"
+        ],
+        "summary": "check time that a user is in a clue",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "gameId",
+            "in": "path",
+            "description": "game id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "userId",
+            "in": "path",
+            "description": "user Id",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "schema": {
+              "$ref": "#/definitions/UserCheckTime"
+            }
+          }
+        }
+      }
+    }
+  },
+  "definitions": {
+    "Game": {
+      "type": "object",
+      "properties": {
+        "gameId": {
+          "type": "string",
+          "description": "Game identifier"
+        },
+        "listClue": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Clue"
+          }
+        }
+      }
+    },
+    "Clue": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "options": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "Answer": {
+      "type": "object",
+      "properties": {
+        "anwer": {
+          "type": "string"
+        }
+      }
+    },
+    "Gift": {
+      "type": "object",
+      "properties": {
+        "text": {
+          "type": "string"
+        }
+      }
+    },
+    "ClueAnswerVerify": {
+      "type": "object",
+      "properties": {
+        "text": {
+          "type": "string"
+        }
+      }
+    },
+    "UserCheckTime": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,3 @@
+1. Configure DockerFile, dockerHub and travis CI for create a dockers and deploy in dockerHub
+2. Configure Amazon ECS for deploy the container
+3. Generated SoaPUI and do load test
