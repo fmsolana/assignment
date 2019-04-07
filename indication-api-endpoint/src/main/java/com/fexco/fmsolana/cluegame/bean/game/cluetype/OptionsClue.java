@@ -23,6 +23,12 @@ public class OptionsClue extends Clue {
 		options.add(option2);
 		options.add(correctOption);
 		this.correctOption = correctOption;
+		this.typeClue = "OptionsClue";
+	}
+
+	@Override
+	public String getTypeClue() {
+		return "OptionsClue";
 	}
 
 	@Override

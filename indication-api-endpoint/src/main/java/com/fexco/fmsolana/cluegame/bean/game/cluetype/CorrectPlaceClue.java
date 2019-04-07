@@ -17,6 +17,7 @@ public class CorrectPlaceClue extends Clue {
 		super(id);
 		this.longitud = longitud;
 		this.latitud = latitud;
+		this.typeClue = "correctPlace";
 	}
 
 	@Override

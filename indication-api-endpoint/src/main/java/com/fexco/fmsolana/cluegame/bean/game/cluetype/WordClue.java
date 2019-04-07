@@ -15,6 +15,12 @@ public class WordClue extends Clue {
 	public WordClue(int id, String answer) {
 		super(id);
 		this.answer = answer;
+		this.typeClue = "WordClue";
+	}
+
+	@Override
+	public String getTypeClue() {
+		return "WordClue";
 	}
 
 	@Override

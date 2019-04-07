@@ -19,14 +19,14 @@ public class Game {
 		return gameId;
 	}
 
-	public Clue getClue(int i) {
-		return listClue.get(i - 1);
+	public Clue getClue(int id) {
+		if (id <= listClue.size())
+			return listClue.get(id - 1);
+		return null;
 	}
 
 	public Clue getNextClue(int id) {
-		if (id < listClue.size())
-			return getClue(id);
-		return null;
+		return getClue(id);
 	}
 
 	public String getGiftId() {

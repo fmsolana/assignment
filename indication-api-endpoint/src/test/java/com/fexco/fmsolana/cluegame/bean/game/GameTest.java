@@ -18,7 +18,8 @@ public class GameTest {
 	@Test
 	public void textNextClue() {
 		assertNotNull(game.getNextClue(1));
-		assertNull(game.getNextClue(2));
+		assertNotNull(game.getNextClue(2));
+		assertNull(game.getNextClue(3));
 	}
 
 	@Test

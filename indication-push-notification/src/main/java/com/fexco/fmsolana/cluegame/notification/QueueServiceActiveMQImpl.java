@@ -19,7 +19,7 @@ import org.apache.activemq.jms.pool.PooledConnectionFactory;
  */
 public class QueueServiceActiveMQImpl implements QueueService {
 	// TODO make configurable
-	private static final String WIRE_LEVEL_ENDPOINT = "ssl://b-fcc54676-0544-4932-b2e6-94541f0465cd-1.mq.us-east-2.amazonaws.com:61617";
+	private static final String WIRE_LEVEL_ENDPOINT = "ssl://b-92b97b14-df16-4d7f-bd6a-76977e2e771e-1.mq.us-east-2.amazonaws.com:61617";
 	private static final String ACTIVE_MQ_USERNAME = "fmsolana";
 	private static final String ACTIVE_MQ_KEYWORD = "Ya1hRdT8EF2hS0eZG9Ky";
 	private static final String QUEUE_NAME = "CLUE_GAME_QUEUE";
