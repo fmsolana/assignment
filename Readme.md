@@ -26,7 +26,7 @@ The goal is developing the point 2 and 3 as minimum requirements.
 - SoapUI for stresstest
 - AmazonMQ for queue
 
-##### [Destop Develop tool](/defitions/tools.txt)
+##### [Destop Develop tool](/definitions/tools.txt)
 
 
 ### URLs
