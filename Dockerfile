@@ -1,5 +1,9 @@
 FROM anapsix/alpine-java
 
+LABEL maintainer="fmsolana@gmail.com"
+LABEL version="1.0"
+LABEL description="ClueGame by Felipe Solana"
+
 WORKDIR /server
 
 # Adding source, compile and package into a fat jar
