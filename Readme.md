@@ -3,7 +3,7 @@
 Implement assignment [option 1](https://github.com/jesusjavierdediego/assignments)
 
 ### Clue Game
-The objective is making the structure to build the clue game following the [requirements(Spanish only)](/defitions/Requirements.txt)
+The objective is making the structure to build the clue game following the [requirements](/defitions/MVPRequirements)
 
 1. A front App module to play
 2. A services API to support the front module
@@ -12,7 +12,7 @@ The objective is making the structure to build the clue game following the [requ
 
 ### Minimum Value Product.
 
-The goal is developing the point 2 and 3 as [minimum requirements](/defitions/MVPRequirements)
+The goal is developing the point 2 and 3 as minimum requirements.
 
 ### Tools
 - Maven to build project delivery
