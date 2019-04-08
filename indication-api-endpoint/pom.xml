@@ -8,7 +8,7 @@
 		<version>0.0.1-SNAPSHOT</version>
 	</parent>
 	<artifactId>indication-api-endpoint</artifactId>
-
+	
 	<dependencies>
 		<dependency>
 			<groupId>com.fexco.fmsolana.cluegame</groupId>
@@ -31,6 +31,7 @@
 	</dependencies>
 
 	<build>
+		<finalName>${project.name}</finalName>
 		<plugins>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
