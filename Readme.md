@@ -3,7 +3,7 @@
 Implement assignment [option 1](https://github.com/jesusjavierdediego/assignments)
 
 ### Clue Game
-The objective is making the structure to build the clue game following the [requirements](/defitions/MVPRequirements)
+The objective is making the structure to build the clue game following the [requirements](/definitions/MVPRequirements)
 
 1. A front App module to play
 2. A services API to support the front module
@@ -59,6 +59,6 @@ With SoapUI [here](/ClueGameApiSoapUI.xml). I did a load test during 10 minutes,
 ![ELBDuringLoadTest](resources/ELBDuringLoadTest.PNG)
 
 
-##### [Task by day](/defitions/task)
+##### [Task by day](/definitions/task)
 
 
