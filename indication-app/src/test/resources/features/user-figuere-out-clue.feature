@@ -19,3 +19,4 @@ Feature: The user figure out the clue
     Then the user see gift
     And the points obtein for win the game
     
+    

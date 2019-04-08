@@ -8,3 +8,5 @@ Feature: User Begin the game
   Scenario: begin the game
     When an user press the button continue to first clue 
     Then the game begin and he see the first clue
+
+   

@@ -1,21 +1,20 @@
-    1. A user can begin a game
+    1. Give an user when enter in application then It can begin a game
     2. When an user begins a game then the user sees an introductory explanation and a button to continue to the first clue
-    3. When an user presses the button to continue to the first clue the game begins and he sees the first clue
-    4. When the user hits the clue he goes to next clue
-    5. When the user hits the last clue It wins the game
-    6. When the user wins the game, a congratulation text will be shown with a button "get the gift"
-    7. When the user presses the button "get the gift", the prize won will be shown with the score obtained
-    8. The clue will be of 3 types: Choose the options, write the answer or be in the right place
-    9. When choosing the option clue is shown, the user must choose between three options
-    10. The options for "choose the option" will be texts or images
-    11. A user that hits a clue of "choose the option" get 10X points if he hits in first try, 3X if he hits in second try, and X if hitting at the third try
-    12. When "write the answer" clue is shown, the user must write the correct answer
-    13. When "be in the right place" clue is shown, the user must write the geographical coordinates or be in the right place and share the device gps
-    14. When a user is in a clue a countdown will be activated
-    15. When a user is X time in a clue a tip help will be show to resolve the clue
-    16. The tip to resolve "choose an option" will remove a not valid option
-    17. The tip for "write the answer" will be showning some letters
-    18. The tip for "be in the right place" will be showning the longitude
+    3. When an user presses the button to continue to the first clue then the game begins and he sees the first clue
+    4. When the user hits the clue then he goes to next clue
+    5. When the user hits the last clue then It wins the game
+    6. When the user wins the game then a congratulation text will be shown and a button "get the gift"
+    7. When the user presses the button "get the gift" then the prize won will be shown and the score obtained
+    8. When the clue is show then the clue can be of 3 types: Choose the options, write the answer or be in the right place
+    9. When choosing the option clue is shown then the user must choose between three options and it could be texts or images but not both
+    10. Given an user when hits a clue of "choose the option" then get 10X points if he hits in first try, 3X if he hits in second try, and X if hitting at the third try
+    11. Given a "write the answer" clue when it's shown then user must write the correct answer
+    12. Given a "be in the right place" clue  when it's shown then the user must write the geographical coordinates or be in the right place and share the device gps
+    13. When a user is in a clue then a countdown will be activated
+    14. When a user is X time in a clue then a tip help will be show to resolve the clue
+    15. Given a "choose an option" clue when countdown is over then it's removed a not valid option
+    16. Given a "write the answer" clue when countdown is over then one wrong option is removed
+    17. Given a "be in the right place" clue when countdown is over then the latitude or longitude is shown
 
     
    Not Functional

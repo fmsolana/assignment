@@ -15,3 +15,4 @@ Feature: Countdown tips
     Given a clue type be in place
     When the coundown over
     Then the latitude or longitude is show
+    
