@@ -4,4 +4,4 @@ Please specific the keystore:
     -Dsparkjava.secure.keystore.file = route/keystore.jsk
     -Dsparkjava.secure.keystore.keyword = keyword
  run params:
-     java -cp server.jar rout / keystore keyword
+     java -cp server.jar route/keystore keyword
