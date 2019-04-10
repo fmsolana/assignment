@@ -4,9 +4,11 @@ import org.eclipse.jetty.client.HttpClient;
 import org.eclipse.jetty.util.ssl.SslContextFactory;
 import org.junit.AfterClass;
 import org.junit.BeforeClass;
+import org.junit.Ignore;
 
 import spark.Spark;
 
+@Ignore
 public class MainSecureServerTest extends testServer {
 
 	private static int port = 4568;
