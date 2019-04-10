@@ -30,6 +30,26 @@ public class GameRepositoryTest {
 	}
 
 	@Test
+	public void testStarGameWithUserNull() throws Exception {
+		String userId = "userId";
+		Clue clue = GameRepository.starGame(null, userId);
+		assertNull(clue);
+	}
+
+	@Test
+	public void testStarGameWithGameNull() throws Exception {
+		String gameId = "gameid";
+		Clue clue = GameRepository.starGame(gameId, null);
+		assertNull(clue);
+	}
+
+	@Test
+	public void testStarGameWithGameNullAndUserNull() throws Exception {
+		Clue clue = GameRepository.starGame(null, null);
+		assertNull(clue);
+	}
+
+	@Test
 	public void getGameNoExists() {
 		String gameId = "NO_EXISTS";
 		Game game = GameRepository.getGame(gameId);

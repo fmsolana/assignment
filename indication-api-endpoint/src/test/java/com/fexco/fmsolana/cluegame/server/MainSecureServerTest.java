@@ -3,11 +3,9 @@ package com.fexco.fmsolana.cluegame.server;
 import org.eclipse.jetty.client.HttpClient;
 import org.eclipse.jetty.util.ssl.SslContextFactory;
 import org.junit.BeforeClass;
-import org.junit.Ignore;
 
 import spark.Spark;
 
-@Ignore
 public class MainSecureServerTest extends testServer {
 	private static int port = 4568;
 	private String endPoint = "127.0.0.1";

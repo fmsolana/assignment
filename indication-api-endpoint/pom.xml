@@ -121,6 +121,7 @@
 						<configuration>
 							<name>api</name>
 							<waitForInterrupt>false</waitForInterrupt>
+							<waitAfterLaunch>6000</waitAfterLaunch>
 							<healthcheckUrl>http://localhost:4567/smoke</healthcheckUrl>
 							<arguments>
 								<argument>java</argument>

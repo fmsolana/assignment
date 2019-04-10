@@ -10,6 +10,10 @@ import com.fexco.fmsolana.cluegame.server.exceptions.GameRequestException;
 
 public class UserRepository {
 
+	private UserRepository() {
+
+	}
+
 	private static Map<String, Game> usersPlaying = new ConcurrentHashMap<>();
 	private static Map<String, UserCheckTime> usersTimePlaying = new ConcurrentHashMap<>();
 
@@ -35,6 +39,11 @@ public class UserRepository {
 			return usersTimePlaying.get(userId);
 		else
 			return null;
+	}
+
+	public static void resetPlayers() {
+		usersPlaying.clear();
+		usersTimePlaying.clear();
 	}
 
 }
